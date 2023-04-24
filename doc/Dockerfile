@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:buster
 USER root
 # Install all the required packages for the pandoc stack.
 RUN set -x \
@@ -6,10 +6,10 @@ RUN set -x \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Acquire::Retries=10 --no-install-recommends \
     make \
     texlive-latex-base \
-    texlive-xetex latex-xcolor \
-    texlive-math-extra \
+    texlive-xetex \
     texlive-latex-extra \
     texlive-fonts-extra \
+    texlive-fonts-recommended \
     texlive-bibtex-extra \
     fontconfig \
     lmodern \
